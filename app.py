@@ -13,7 +13,7 @@ model = tf.keras.models.load_model('plant_disease.h5')
 CLASS_NAMES = ['Corn-Common_rust', 'Potato-Early_blight', 'Tomato-Bacterial_spot']
 
 #Setting Title of App
-st.title("Plant Disease Detection")
+st.title("Leaf Disease Prediction")
 st.markdown("Upload an image of the plant leaf")
 
 #Uploading the dog image
@@ -22,13 +22,11 @@ submit = st.button('Predict')
 #On predict button click
 if submit:
 
-
     if plant_image is not None:
 
         # Convert the file to an opencv image.
         file_bytes = np.asarray(bytearray(plant_image.read()), dtype=np.uint8)
         opencv_image = cv2.imdecode(file_bytes, 1)
-
 
 
         # Displaying the image
